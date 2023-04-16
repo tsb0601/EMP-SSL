@@ -148,17 +148,17 @@ torch.multiprocessing.set_sharing_strategy('file_system')
 #Get Dataset
 if args.data == "imagenet100" or args.data == "imagenet":
         
-    memory_dataset = load_dataset(args.data, "cifar_patch", train=True, into_patches=True, add_gaussian=False, num_patch = test_patches)
+    memory_dataset = load_dataset(args.data, train=True, num_patch = test_patches)
     memory_loader = DataLoader(memory_dataset, batch_size=50, shuffle=True, drop_last=True,num_workers=8)
 
-    test_data = load_dataset(args.data, "cifar_patch", train=False, into_patches=True, add_gaussian=False, num_patch = test_patches)
+    test_data = load_dataset(args.data, train=False, num_patch = test_patches)
     test_loader = DataLoader(test_data, batch_size=50, shuffle=True, num_workers=8)
 
 else:
-    memory_dataset = load_dataset(args.data, "cifar_patch", train=True, into_patches=True, add_gaussian=False, num_patch = test_patches)
+    memory_dataset = load_dataset(args.data, train=True, num_patch = test_patches)
     memory_loader = DataLoader(memory_dataset, batch_size=50, shuffle=True, drop_last=True,num_workers=8)
 
-    test_data = load_dataset(args.data, "cifar_patch", train=False, into_patches=True, add_gaussian=False, num_patch = test_patches)
+    test_data = load_dataset(args.data, train=False, num_patch = test_patches)
     test_loader = DataLoader(test_data, batch_size=50, shuffle=True, num_workers=8)
 
 # Load Model and Checkpoint

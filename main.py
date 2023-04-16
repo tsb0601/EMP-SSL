@@ -107,11 +107,11 @@ def cal_TCR(z, criterion, num_patches):
 torch.multiprocessing.set_sharing_strategy('file_system')
 
 if args.data == "imagenet100" or args.data == "imagenet":
-    train_dataset = load_dataset("imagenet", "cifar_patch", use_baseline=False, train=True, into_patches=True, add_gaussian=False, num_patch = num_patches)
+    train_dataset = load_dataset("imagenet", train=True, num_patch = num_patches)
     dataloader = DataLoader(train_dataset, batch_size=args.bs, shuffle=True, drop_last=True,num_workers=8)
 
 else:
-    train_dataset = load_dataset(args.data, "cifar_patch", use_baseline=False, train=True, into_patches=True, add_gaussian=False, num_patch = num_patches)
+    train_dataset = load_dataset(args.data, train=True, num_patch = num_patches)
     dataloader = DataLoader(train_dataset, batch_size=args.bs, shuffle=True, drop_last=True,num_workers=16)
 
 
