@@ -12,6 +12,7 @@ Authors: Shengbang Tong*, Yubei Chen*, Yi Ma, Yann Lecun
 This repository contains the implementation for the paper "EMP-SSL: Towards Self-Supervised Learning in One Training Epoch." The paper introduces a simplistic but efficient self-supervised learning method called Extreme-Multi-Patch Self-Supervised-Learning (EMP-SSL). EMP-SSL significantly reduces the training epochs required for convergence by increasing the number of fix size image patches from each image instance.
 
 ## Getting Started
+Current code implementation supports cifar10, cifar100 and imagenet100. We will update more datasets in the future~
 
 To get started with the EMP-SSL implementation, follow these instructions:
 
@@ -19,13 +20,13 @@ To get started with the EMP-SSL implementation, follow these instructions:
 ```bash
 git clone https://github.com/tsb0601/emp-ssl.git
 cd emp-ssl
-```
+``` 
 ### 2. Install required packages
 ```
 pip install -r requirements.txt
 ```
 ### 3. Training
-Current code implementation supports cifar10, cifar100 and imagenet100. We will update more datasets in the future~
+
 Change num_patches here to change the number of patches used in EMP-SSL training.
 ```
 python train.py --data cifar10 --epoch 30 --patch_sim 200 --arch 'resnet18-cifar' --num_patches 20 --lr 0.3
