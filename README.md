@@ -28,7 +28,7 @@ pip install -r requirements.txt
 Current code implementation supports cifar10, cifar100 and imagenet100. We will update more datasets in the future~
 Change num_patches here to change the number of patches used in EMP-SSL training.
 ```
-python train.py --data cifar10 --epochs 30 --patch_sim 200 --arch 'resnet18-cifar' --num_patches 20 
+python train.py --data cifar10 --epoch 30 --patch_sim 200 --arch 'resnet18-cifar' --num_patches 20 --lr 0.3
 ```
 
 ### 4. Evaluating
