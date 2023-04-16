@@ -23,10 +23,11 @@ To get started with the EMP-SSL implementation, follow these instructions:
 ```bash
 git clone https://github.com/tsb0601/emp-ssl.git
 cd emp-ssl
-
+```
 ### 2. Install required packages
+```
 pip install -r requirements.txt
-
+```
 
 ## Acknowledgment: 
 This repo is inspired by [MCR2](https://github.com/Ma-Lab-Berkeley/MCR2), [solo-learn](https://github.com/vturrisi/solo-learn) and [NMCE](https://github.com/zengyi-li/NMCE-release) repo.
