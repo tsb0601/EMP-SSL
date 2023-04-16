@@ -8,7 +8,7 @@ We will release the code very soon~~~ Sorry the server was down (and still down 
 
 
 <p align="center">
-  <img src="pipeline.jpg" alt="drawing" width="500"/>
+  <img src="pipeline.jpg" width="500"/>
 </p>
 
 Authors: Shengbang Tong, Yubei Chen, Yi Ma, Yann Lecun
