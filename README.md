@@ -7,9 +7,8 @@ We will release the code very soon~~~ Sorry the server was down (and still down 
 [![arXiv](https://img.shields.io/badge/arXiv-2304.03977-b31b1b.svg)](https://arxiv.org/abs/2304.03977)
 
 
-<p align="center">
-  <img src="pipeline.jpg" width="500"/>
-</p>
+![Training Pipeline](pipeline.png)
+
 
 Authors: Shengbang Tong, Yubei Chen, Yi Ma, Yann Lecun
 
