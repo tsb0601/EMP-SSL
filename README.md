@@ -6,7 +6,7 @@
 ![Training Pipeline](pipeline.png)
 
 
-Authors: Shengbang Tong, Yubei Chen, Yi Ma, Yann Lecun
+Authors: Shengbang Tong*, Yubei Chen*, Yi Ma, Yann Lecun
 
 ## Introduction
 This repository contains the implementation for the paper "EMP-SSL: Towards Self-Supervised Learning in One Training Epoch." The paper introduces a simplistic but efficient self-supervised learning method called Extreme-Multi-Patch Self-Supervised-Learning (EMP-SSL). EMP-SSL significantly reduces the training epochs required for convergence by increasing the number of fix size image patches from each image instance.
