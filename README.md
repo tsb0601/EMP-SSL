@@ -1,7 +1,3 @@
-We will release the code very soon~~~ Sorry the server was down (and still down sadly :<) We will release the code asap when the server back on
-
-
-
 # EMP-SSL: Towards Self-Supervised Learning in One Training Epoch
 
 [![arXiv](https://img.shields.io/badge/arXiv-2304.03977-b31b1b.svg)](https://arxiv.org/abs/2304.03977)
@@ -28,8 +24,20 @@ cd emp-ssl
 ```
 pip install -r requirements.txt
 ```
+### 3. Training
+Current code implementation supports cifar10, cifar100 and imagenet100. We will update more datasets in the future~
+Change num_patches here to change the number of patches used in EMP-SSL training.
+```
+python train.py --data cifar10 --epochs 30 --patch_sim 200 --arch 'resnet18-cifar' --num_patches 20 
+```
 
-## Acknowledgment: 
+### 4. Evaluating
+Because our model is trained with only fixed size image patches. To evaluate the performance, we adopt bag-of-features model from intra-instance VICReg paper. Change test_patches here to adjust number of patches used in bag-of-feature model for different GPUs.
+```
+python evaluate.py --model_path 'path to your evaluated model' --test_patches 128
+```
+
+## Acknowledgment
 This repo is inspired by [MCR2](https://github.com/Ma-Lab-Berkeley/MCR2), [solo-learn](https://github.com/vturrisi/solo-learn) and [NMCE](https://github.com/zengyi-li/NMCE-release) repo.
 
 ## Citation
