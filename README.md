@@ -11,8 +11,11 @@ Authors: Shengbang Tong*, Yubei Chen*, Yi Ma, Yann LeCun
 ## Introduction
 This repository contains the implementation for the paper "EMP-SSL: Towards Self-Supervised Learning in One Training Epoch." The paper introduces a simplistic but efficient self-supervised learning method called Extreme-Multi-Patch Self-Supervised-Learning (EMP-SSL). EMP-SSL significantly reduces the training epochs required for convergence by increasing the number of fix size image patches from each image instance.
 
+## Preparing Training Data
+Cifar10 and Cifar100 can be downloaded automatically in the script. ImageNet100 is a special subset of ImageNet. Details can be found in this [link](https://github.com/HobbitLong/CMC/issues/21).
+
 ## Getting Started
-Current code implementation supports cifar10, cifar100 and imagenet100. We will update more datasets in the future~
+Current code implementation supports Cifar10, Cifar100 and ImageNet100.
 
 To get started with the EMP-SSL implementation, follow these instructions:
 
@@ -27,10 +30,24 @@ pip install -r requirements.txt
 ```
 ### 3. Training
 
+#### Reproducing 1-epoch results
+For CIFAR10 or CIFAR100
+```
+python main.py --data cifar10 --epoch 2 --patch_sim 200 --arch 'resnet18-cifar' --num_patches 20 --lr 0.3
+```
+For ImageNet100
+```
+python main.py --data imagenet100 --epoch 2 --patch_sim 200 --arch 'resnet18-imagenet' --num_patches 20 --lr 0.3
+```
+
+
+#### Reproducing multi epochs results
 Change num_patches here to change the number of patches used in EMP-SSL training.
 ```
-python train.py --data cifar10 --epoch 30 --patch_sim 200 --arch 'resnet18-cifar' --num_patches 20 --lr 0.3
+python main.py --data cifar10 --epoch 30 --patch_sim 200 --arch 'resnet18-cifar' --num_patches 20 --lr 0.3
 ```
+
+
 
 ### 4. Evaluating
 Because our model is trained with only fixed size image patches. To evaluate the performance, we adopt bag-of-features model from intra-instance VICReg paper. Change test_patches here to adjust number of patches used in bag-of-feature model for different GPUs.
