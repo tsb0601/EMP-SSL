@@ -31,6 +31,11 @@ pip install -r requirements.txt
 ### 3. Training
 
 #### Reproducing 1-epoch results
+
+|                    | CIFAR-10<br>1 Epoch | CIFAR-100<br>1 Epoch | Tiny ImageNet<br>1 epochs | ImageNet-100<br>1 epochs |
+|--------------------|:----------------------:|:-----------------------:|:----------------------------:|:--------------------------:|
+| EMP-SSL (1 Epoch)  |         0.842          |          0.585          |             0.381             |            0.585           |
+
 For CIFAR10 or CIFAR100
 ```
 python main.py --data cifar10 --epoch 2 --patch_sim 200 --arch 'resnet18-cifar' --num_patches 20 --lr 0.3
@@ -42,6 +47,17 @@ python main.py --data imagenet100 --epoch 2 --patch_sim 200 --arch 'resnet18-ima
 
 
 #### Reproducing multi epochs results
+
+|                      | CIFAR-10<br>1 Epoch | CIFAR-10<br>10 Epochs | CIFAR-10<br>30 Epochs | CIFAR-10<br>1000 Epochs | CIFAR-100<br>1 Epoch | CIFAR-100<br>10 Epochs | CIFAR-100<br>30 Epochs | CIFAR-100<br>1000 Epochs | Tiny ImageNet<br>10 Epochs | Tiny ImageNet<br>1000 Epochs |ImageNet-100<br>10 Epochs | ImageNet-100<br>400 Epochs |
+|----------------------|:-------------------:|:---------------------:|:---------------------:|:-----------------------:|:--------------------:|:----------------------:|:----------------------:|:------------------------:| :------------------------:|:------------------------:|:------------------------:| :------------------------:|
+| SimCLR               |        0.282        |         0.565         |         0.663         |          0.910          |         0.054        |         0.185          |         0.341          |          0.662           | - | 0.488 | - | 0.776
+| BYOL                 |        0.249        |         0.489         |         0.684         |          0.926          |         0.043        |         0.150          |         0.349          |          0.708           | - | 0.510 | - | 0.802
+| VICReg               |        0.406        |         0.697         |         0.781         |          0.921          |         0.079        |         0.319          |         0.479          |          0.685           | - | - | - | 0.792
+| SwAV                 |        0.245        |         0.532         |         0.767         |          0.923          |         0.028        |         0.208          |         0.294          |          0.658           |- | - | - | 0.740
+| ReSSL                |        0.245        |         0.256         |         0.525         |          0.914          |         0.033        |         0.122          |         0.247          |          0.674           |- | - | - | 0.769
+| EMP-SSL (20 patches) |        0.806        |         0.907         |         0.931         |            -            |         0.551        |         0.678          |         0.724          |            -              | - | - | - | -
+| EMP-SSL (200 patches)|        0.826        |         0.915         |         0.934         |            -            |         0.577        |         0.701          |         0.733          |            -              | 0.515 | - | 0.789 | -
+
 Change num_patches here to change the number of patches used in EMP-SSL training.
 ```
 python main.py --data cifar10 --epoch 30 --patch_sim 200 --arch 'resnet18-cifar' --num_patches 20 --lr 0.3
