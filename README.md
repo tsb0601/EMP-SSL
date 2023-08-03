@@ -56,7 +56,9 @@ python main.py --data imagenet100 --epoch 2 --patch_sim 200 --arch 'resnet18-ima
 | SwAV                 |        0.245        |         0.532         |         0.767         |          0.923          |         0.028        |         0.208          |         0.294          |          0.658           |- | - | - | 0.740
 | ReSSL                |        0.245        |         0.256         |         0.525         |          0.914          |         0.033        |         0.122          |         0.247          |          0.674           |- | - | - | 0.769
 | EMP-SSL (20 patches) |        0.806        |         0.907         |         0.931         |            -            |         0.551        |         0.678          |         0.724          |            -              | - | - | - | -
-| EMP-SSL (200 patches)|        0.826        |         0.915         |         0.934         |            -            |         0.577        |         0.701          |         0.733          |            -              | 0.515 | - | 0.789 | -
+| EMP-SSL (200 patches)|        0.826*        |         0.915         |         0.934         |            -            |         0.577        |         0.701          |         0.733          |            -              | 0.515 | - | 0.789 | -
+
+\* Here, we change learning rate schedule to decay in 30 epochs, so 1 epoch accuracy will be slightly lower than optimizing for 1-epoch training. 
 
 Change num_patches here to change the number of patches used in EMP-SSL training.
 ```
